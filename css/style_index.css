@@ -52,7 +52,8 @@ body {
     flex-direction: column;
     justify-content: center; 
     align-items: center; 
-    height: 100%; 
+    height: 100%;
+    margin-top: -50px; 
 }
 
 
@@ -101,4 +102,41 @@ body {
     height: 100%;
     z-index: -1; /* Place l'iframe en arrière-plan */
     border: none; /* Supprime la bordure de l'iframe */
+}
+
+/* Media Queries pour ajuster la marge supérieure */
+
+/* Très petits écrans (téléphones en mode portrait) */
+@media (max-width: 575.98px) {
+    .center-content {
+        margin-top: -20px; /* Ajustez selon vos besoins */
+    }
+}
+
+/* Petits écrans (téléphones en mode paysage et petites tablettes) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .center-content {
+        margin-top: -30px; /* Ajustez selon vos besoins */
+    }
+}
+
+/* Écrans moyens (tablettes) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .center-content {
+        margin-top: -40px; /* Ajustez selon vos besoins */
+    }
+}
+
+/* Grands écrans (ordinateurs de bureau) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .center-content {
+        margin-top: -50px; /* Ajustez selon vos besoins */
+    }
+}
+
+/* Très grands écrans (grands ordinateurs de bureau) */
+@media (min-width: 1200px) {
+    .center-content {
+        margin-top: -60px; /* Ajustez selon vos besoins */
+    }
 }
