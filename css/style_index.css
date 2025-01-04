@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    overflow: hidden; /* Empêche les barres de défilement */
+    margin: 0; /* Supprime la marge du body */
+    font-family: 'Poppins', sans-serif; /* Applique la police Poppins */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste la vidéo pour couvrir tout l'arrière-plan */
+    z-index: -1; /* Place la vidéo en arrière-plan */
+}
+
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid white;
+    animation: typing 3.5s steps(40, end) infinite, blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    0% { width: 0 }
+    50% { width: 100% }
+    100% {width: 0}
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+.menu-item {
+    position: relative;
+    transition: color 0.3s ease;
+    list-style-type: none; /* Supprime les puces */
+}
+
+.menu-item:hover {
+    color: #00FF99; /* Change la couleur du texte au survol en vert */
+}
+
+/* Crée le trait vert au survol */
+.menu-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00FF99;
+    transition: width 0.3s ease;
+}
+
+.menu-item:hover::after {
+    width: 100%;
+}

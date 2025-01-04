@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Yohan SOM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style_index.css">
+</head>
+
+<body class="bg-black text-white font-sans">
+    <video autoplay loop muted class="video-background">
+        <source src="img/Aura.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+
+    <div class="container-fluid">
+        <nav class="d-flex justify-content-center p-4">
+            <a href="#" class="menu-item text-lg font-medium mx-4 text-white">ACCUEIL</a>
+            <a href="#" class="menu-item text-lg font-medium mx-4 text-white">ABOUT ME</a>
+            <a href="#" class="menu-item text-lg font-medium mx-4 text-white">PROJETS</a>
+        </nav>
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold">
+                    <span class="typing-animation"></span><br>
+                    YOHAN SOM
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const words = ["DÉVELOPPEUR", "DESIGNER", "CRÉATIF"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 150;
+        const erasingSpeed = 100;
+        const newWordDelay = 2000;
+        const typedTextSpan = document.querySelector(".typing-animation");
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typedTextSpan.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextSpan.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(type, newWordDelay);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex++;
+                if (wordIndex === words.length) {
+                    wordIndex = 0;
+                }
+                setTimeout(type, typingSpeed + 500);
+            } else {
+              setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(type, newWordDelay + 250);
+        });
+    </script>
+</body>
+</html>
