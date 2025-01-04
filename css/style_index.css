@@ -1,47 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    overflow: hidden; /* Empêche les barres de défilement */
-    margin: 0; /* Supprime la marge du body */
-    font-family: 'Poppins', sans-serif; /* Applique la police Poppins */
-}
-
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajuste la vidéo pour couvrir tout l'arrière-plan */
-    z-index: -1; /* Place la vidéo en arrière-plan */
-}
-
-.typing-animation {
     overflow: hidden;
-    white-space: nowrap;
-    border-right: .15em solid white;
-    animation: typing 3.5s steps(40, end) infinite, blink-caret .75s step-end infinite;
+    margin: 0; 
+    font-family: 'Poppins', sans-serif; 
 }
 
-@keyframes typing {
-    0% { width: 0 }
-    50% { width: 100% }
-    100% {width: 0}
+.container-fluid {
+    position: relative;
+    z-index: 1; 
 }
 
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
-}
 
+/* Style pour le menu de navigation */
 .menu-item {
     position: relative;
+    font-weight: 600;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
-    list-style-type: none; /* Supprime les puces */
+    list-style-type: none; 
 }
 
 .menu-item:hover {
-    color: #00FF99; /* Change la couleur du texte au survol en vert */
+    color: #00FF99;
 }
 
 /* Crée le trait vert au survol */
@@ -58,4 +39,55 @@ body {
 
 .menu-item:hover::after {
     width: 100%;
+}
+
+.hero {
+    margin-top: 350px; 
+}
+
+/* Style pour le prenom */
+.prenom-text-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+.prenom-text {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2.2rem;
+}
+
+/* Style pour le texte défilant */
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 4.5rem;
+    border-right: .15em solid white;
+    animation: typing 3.5s steps(40, end) infinite, blink-caret .75s step-end infinite;
+}
+
+/* Animation pour le texte défilant */
+@keyframes typing {
+    0% { width: 0 }
+    50% { width: 100% }
+    100% {width: 0}
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+
+/* Style pour l'iframe en arrière-plan */
+#background-iframe {
+    position: fixed; /* Fixe l'iframe par rapport à la fenêtre */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place l'iframe en arrière-plan */
+    border: none; /* Supprime la bordure de l'iframe */
 }

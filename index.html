@@ -9,65 +9,69 @@
 </head>
 
 <body class="bg-black text-white font-sans">
-    <video autoplay loop muted class="video-background">
-        <source src="img/Aura.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la balise vidéo.
-    </video>
+
+    <iframe id="background-iframe" src="background.html" title="Background Animation"></iframe>
 
     <div class="container-fluid">
         <nav class="d-flex justify-content-center p-4">
-            <a href="#" class="menu-item text-lg font-medium mx-4 text-white">ACCUEIL</a>
-            <a href="#" class="menu-item text-lg font-medium mx-4 text-white">ABOUT ME</a>
-            <a href="#" class="menu-item text-lg font-medium mx-4 text-white">PROJETS</a>
+            <a href="#" class="menu-item mx-4 text-white">ACCUEIL</a>
+            <a href="#" class="menu-item mx-4 text-white">ABOUT ME</a>
+            <a href="#" class="menu-item mx-4 text-white">PROJETS</a>
         </nav>
-        <div class="row h-100 align-items-center">
-            <div class="col-12 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold">
-                    <span class="typing-animation"></span><br>
-                    YOHAN SOM
-                </h1>
+    </div>
+
+    <div class="hero row align-items-center">
+        <div class="col-12 text-center">
+            <h1 class="typing-anim">
+                <span class="typing-animation"></span><br>
+            </h1>
+            <div class="prenom-text-container">
+                <span class="prenom-text">YOHAN SOM</span>
             </div>
         </div>
     </div>
 
-    <script>
-        const words = ["DÉVELOPPEUR", "DESIGNER", "CRÉATIF"];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 150;
-        const erasingSpeed = 100;
-        const newWordDelay = 2000;
-        const typedTextSpan = document.querySelector(".typing-animation");
 
-        function type() {
-            const currentWord = words[wordIndex];
-            if (isDeleting) {
-                typedTextSpan.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typedTextSpan.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
 
-            if (!isDeleting && charIndex === currentWord.length) {
-                isDeleting = true;
-                setTimeout(type, newWordDelay);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex++;
-                if (wordIndex === words.length) {
-                    wordIndex = 0;
-                }
-                setTimeout(type, typingSpeed + 500);
-            } else {
-              setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
-            }
+
+<script>
+    const words = ["DÉVELOPPEUR", "DESIGNER", "CRÉATIF", "AUTODIDACTE"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 150;
+    const erasingSpeed = 100;
+    const newWordDelay = 2000;
+    const typedTextSpan = document.querySelector(".typing-animation");
+
+    function type() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+            typedTextSpan.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedTextSpan.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(type, newWordDelay + 250);
-        });
-    </script>
+        if (!isDeleting && charIndex === currentWord.length) {
+            isDeleting = true;
+            setTimeout(type, newWordDelay);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex++;
+            if (wordIndex === words.length) {
+                wordIndex = 0;
+            }
+            setTimeout(type, typingSpeed + 500);
+        } else {
+            setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(type, newWordDelay + 250);
+    });
+</script>
 </body>
 </html>
