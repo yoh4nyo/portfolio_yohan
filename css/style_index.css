@@ -42,9 +42,19 @@ body {
     width: 100%;
 }
 
-.hero {
-    margin-top: 350px; 
+/* Style pour centrer le contenu */
+.full-height{
+    height: 100vh; 
 }
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+}
+
 
 /* Style pour le prenom */
 .prenom-text-container {
