@@ -1,3 +1,4 @@
-# portfolio_yohan 
+# Portfolio de Yohan S
 
-C'EST PARTIIIIIIIIIIIIIIIIIIIIII
+- Début : 04/01/25
+- Objectif : finir avant Avril ? 
